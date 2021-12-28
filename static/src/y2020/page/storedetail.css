@@ -1,0 +1,320 @@
+/* Store Information */
+.store__banner__container {
+  min-height: calc(105vh - var(--header-height));
+	place-content: center;
+  background-size: cover;
+  margin-top:5rem;
+}
+
+.font__impact {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* 01 Banner Image & Text */ 
+.banner__container {
+  position: relative;
+}
+
+.banner__container img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  overflow-y: hidden;
+}
+.banner__text {
+  color:white;
+  font-weight: var(--font-semi-bold);
+  position: absolute;
+  bottom: 30%;
+  left: 5%;
+  text-shadow: 1px 1px 2px rgba(0,0,0, .8);
+}
+
+/* 02 Store Title */
+.store__title {
+    margin: 3rem 2rem;
+    padding-left: 3rem;
+}
+
+.store__title__detail {
+    width: 40vw;
+}
+
+/* 03 Store Detail Images */
+/* === 03-1,2 : Photo Text Descriptions === */
+.store__photo {
+  margin: 8rem 5rem;
+}
+
+.store__photo h1{
+  left: -5%;
+}
+
+.store__photo__text {
+  margin-bottom: 2rem;
+}
+
+/* 03-1,2 : Photo gallery */
+.store__photo__array {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  column-gap: 1rem;
+}
+
+.photo__image {
+  width: 25vw;
+  max-height: 250px;
+  object-fit: cover;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);;
+}
+
+
+/* 03-3 : New Photo Gallery */
+.store__photo__array__big {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 66vh 55vh;
+  justify-items: center;
+}
+.photo__fin1 {
+  grid-column: 1/4;
+  grid-row: 1;
+  width: 100%;
+  height: 66vh;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,.3);
+}
+.photo__fin2 {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
+  height: 55vh;
+  object-fit: cover;
+  overflow: hidden;
+  padding: 1rem 1rem 0px 0px;
+}
+.photo__fin3 {
+  grid-column: 2;
+  grid-row: 2;
+  width: 100%;
+  height: 55vh;
+  object-fit: cover;
+  overflow: hidden;
+  padding: 1rem 0px 0px 1rem;
+}
+
+
+/* 04 Store Naver Map */
+.store__map {
+  margin: 8rem 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.store__naver__map {
+  width: 100%;
+  height: 300px;
+  padding: 2rem;
+  border-radius: 10px;
+}
+.store__naver__map__text h2{
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  margin-left: 2rem;
+}
+.store__naver__map__text p {
+  margin: 0px;
+  margin-left: 2rem;
+  padding: 0px;
+  padding-bottom: 1rem;
+}
+
+
+/* 05 Artist Profile */
+.store__artist {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1rem 0px 6rem 0px;
+}
+/* ===  Artist Profile Photo  === */
+.store__artist__profile {
+  width: 100%;
+}
+.store__artist__profile img {
+  float: right;
+  width: 350px;
+  padding-right: 2rem;
+  object-fit: cover;
+  overflow: hidden;
+}
+/* ===  Artist Profile Text  === */
+.store__artist__text {
+  width: 65%;
+}
+.artist__subtitle {
+  font-weight: var(--font-semi-bold);
+  color:rgba(0, 0, 0, 0.3)
+}
+.artist__description {
+  margin-top: 1rem;
+  font-weight: var(--font-semi-bold);
+  color:rgba(0, 0, 0, 0.8)
+}
+.artist__social {
+  margin: 10px 0px 20px 0px;
+  font-size: 35px;
+  text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 2px;
+}
+.artist__social a {
+  text-decoration: none;
+  color: #000;
+  padding: 0px 15px;
+}
+.artist__others p {
+  margin: 1rem 0px;
+}
+.artist__others p a {
+  font-size: var(--normal-font-size);
+  text-decoration: none;
+  color: black
+}
+.font-light {
+  color:rgba(250, 50, 50, 0.8)
+}
+
+
+
+
+/* Mobile Screen */
+/* ================================== */
+@media screen and (max-width: 768px) {
+
+  /* Store Information Area */
+	.store__banner__container {
+    margin-top:0px;
+  }
+
+  /* 01 Banner Image & Text */
+  .banner__container img {
+    height: 300px;
+  }
+
+  /* 02 Store Title */
+  .store__title {
+    margin: 3rem 1rem;
+  }
+  .store__title__detail {
+    width: 93%;
+  }
+
+  /* 03-1,2 Store Detail Images */
+  .store__photo {
+    margin: 8rem 1rem;
+  }
+  .store__photo__array {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 2rem;
+  }
+  .photo__image {
+    width: 90%;
+    max-height: 300px;
+    object-fit: cover;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+  }
+
+  /* 03-3 Store Big Detail Images */
+  .store__photo__array__big {
+    display: flex;
+    flex-direction: column;
+  }
+  .photo__fin1 {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    overflow: hidden;
+    /* margin: 0px 0px 1rem 0px; */
+    border-radius: 20px;
+    padding:0px;
+    margin:0px;
+    margin-bottom: 2rem;
+  }
+  .photo__fin2 {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 20px;
+    padding:0px;
+    margin:0px;
+    margin-bottom: 2rem;
+  }
+  .photo__fin3 {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 20px;
+    padding:0px;
+    margin:0px;
+    margin-bottom: 2rem;
+  }
+
+  /* 04 Naver Map */
+  .store__map {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0.5rem 1rem;
+  }
+  .store__naver__map {
+    height: 180px;
+  }
+  .store__naver__map__text {
+    margin: 0px 0px ;
+  }
+  .store__naver__map__text p {
+    margin-bottom:  0px;
+  }
+
+  /* 05 Profile Map */
+  .store__artist {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0px;
+    margin: 0px;
+  }
+  .store__artist__text {
+    width: 85%;
+    align-self: center;
+    margin-top: 5rem;
+  }
+
+  .store__artist__profile {
+    display: contents;
+    width: 100%;
+  }
+  .store__artist__profile img {
+    width: 250px;
+    padding: 0px;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    object-fit: cover;
+    align-self: center;
+  }
+
+  .artist__social {
+    font-size: 25px;
+  }
+  .artist__social a {
+    color: #000;
+    padding: 0px 7px;
+  }
+}

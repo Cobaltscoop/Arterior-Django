@@ -1,0 +1,25 @@
+.slider {
+    width: auto;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: inherit;
+
+    font-size: 36px;
+    color: #fff;
+    overflow: hidden;
+    animation: slideShow 10s infinite;
+    background-position: center;
+    background-size: cover;
+    background-color: #000;
+}
+

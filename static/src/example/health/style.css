@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+
+html, body {
+    background-color: #fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+div, p, h1, h2, img {
+    border: 1px dashed #000 !important;
+}
+
+/* Header : navigation style */
+.nav {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    z-index: 1000;
+    padding: 0 25px 0 25px;
+    background-color:#fff;
+    box-shadow: 0 19px 28px rgba(0,0,0,0.1);
+}
+
+.nav .links a{
+    text-decoration: none;
+    margin-right: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.nav .links .mainlink  {
+    color: #e0501b;
+}
+
+.nav h4 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+/* Section 1 : landing page */
+.landing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10vw 0 10vw;
+    height: 100vh;
+}
+
+.landingText h1 {
+    font-size: 6vw; 
+    margin: 0;
+}
+
+.landingText h1 span {
+    color: #e0501b;
+    font-size: 4vw;
+}
+
+.landingText h3 {
+    margin: 6px;
+    font-size: 20px;
+    opacity: 0.3;
+    line-height: 30px;
+}
+
+.landing .btn {
+    width: 120px;
+    margin-top: 30px;
+    font-size: 1.2vw;
+    padding: 14px 20px 14px 20px;
+    background-color: #3f8be0;
+    color: #fff;
+    border-radius: 45px;
+    text-align: center;
+}
+
+.landingText .btn a {
+    font-size: 1.2vw;
+    color: #fff;
+    text-decoration: none;
+}
+
+.landingImage img {
+    width: 28vw;
+}
+
+/*  Section 2 : About */
+.about {
+    display: flex;
+    flex-direction: 50px;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 600px;
+    padding: 50px;
+}
+
+.aboutText{
+    position: relative;
+    padding: 0 50px;
+    height: inherit;
+}
+
+.aboutText h1 span {
+    color: #2f8be0;
+    font-size: 3vw;
+}
+
+.aboutText img {
+    position: absolute;
+    width: 10vw;
+    top: 50px;
+}
+
+.aboutDetail {
+    width: 50%;
+}
+
+.aboutDetail ol {
+    list-style: none;
+    color: #e0501b;
+} 
+
+.aboutDetail ol li {
+    font-size: 34px;
+    position: relative;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.aboutDetail ol li p {
+    font-size: 16px;
+    color: #000;
+    padding-left: 60px;
+    line-height: 30px;
+    opacity: 0.6;
+}
+
+.aboutDetail ol li span {
+    position: absolute;
+    line-height: 25px;
+    font-weight: 600;
+}
+
+/* Section 3 : info section */
+.infoSection{
+    height: 600px;
+}
+
+.infoHeader {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.infoHeader h1 span {
+    color: #e0501b;
+}
+
+.infoCards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0 40px 0;
+}
+
+.infoCards .card {
+    position: relative;
+    height: 360px;
+    width: 360px;
+    background: #fff;
+    box-shadow: 0 10px 22px rgba(0,0,0,.1), 0 10px 10px rgba(0,0,0,0.1);
+}
+
+.infoCards .one .cardoneImg{
+    position: absolute;
+    width: 180px;
+    top: -50px;
+    right: -50px;
+}
+
+.infoCards .two .cardtwoImg{
+    position: absolute;
+    top: -50px;
+    width: 180px;
+    right: -50px;
+}
+
+.infoCards .three .cardthreeImg{
+    position: absolute;
+    top: -50px;
+    width: 180px;
+    right: -50px;
+}
+
+.cardbgone {
+    height: 150px;
+    background-color: #ffce63;
+}
+
+.cardbgtwo {
+    height: 150px;
+    background-color: #a1cdff;
+}
+
+.cardbgthree {
+    height: 150px;
+    background-color: #ffce63;
+}
+
+.cardContent {
+    padding: 0 20px;
+}
+
+.cardContent h2 {
+    font-weight: 600px;
+}
+
+.cardContent p {
+    line-height: 30px;
+    opacity: 0.6;
+}
+
+.cardContent .cardBtn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 25px;
+    height: 20px;
+    right: 20px;
+    padding: 10px;
+
+    background-color: #ededed;
+    border-radius: 6px;
+    transition: all ease-in-out 0.2s;
+}
+
+.cardContent .cardBtn:hover {
+    background-color: #2f8be0;
+}
+
+.cardContent .cardBtn .cardIcon {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 20px;
+}
+
+/* footer 1 : banner */
+.banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 400px;
+    padding: 50px;
+    background-color: #ffce63;
+}
+
+.bannerText h1 {
+    font-size: 3vw;
+    font-weight: 600;
+    color: #000;
+}
+
+.banner h1{
+    font-size: 4vw;
+}
+
+.bannerInnerText{
+    font-size: 3vw;
+}
+
+.bannerText img{
+    width: 20vw;
+}
+
+.bannerImg img{
+    width: 26vw;
+}
+
+/* footer 2 : footer */
+.footer {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.footerlinks a{
+    margin: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+}
+
+
+/* Responsive Media Query : for Mobile */
+@media only screen and (max-width: 600px){
+    /* Mobile : Navigation */
+    .nav{
+        flex-direction: column;
+        justify-content: space-around;
+        overflow-y: hidden;
+
+        padding: 20px;
+        height: auto;
+    }
+    .nav h4{
+        font-size: 6vw;
+        margin-top: 10px;
+        margin-bottom: 14px;
+    }
+    .nav .links a{
+        margin-left: 25px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    /* Mobile : Landing */
+    .landing {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 750px;
+    }
+    .landingText h1{
+        font-size: 6vw;
+        margin: 0;
+    }
+    .landingText h3 {
+        font-size: 16px;
+    }
+    .landingText .btn{
+        margin: 0;
+    }
+    .landingText .btn a{
+        font-size: 3vw;
+    }
+    .landingImage img{
+        width: 52vw;
+        margin-bottom: 20px;
+    }
+    /* Mobile : About */
+    .about{
+        height: auto;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .aboutText{
+        padding: 0 50px;
+        height: 100px;
+    }
+    .aboutText h1{
+        left: 40px;
+        font-size: 5vw;
+    }
+    .aboutText img{
+        width: 16vw;
+        top: 10px;
+        left: -30px;
+    }
+    .aboutList{
+        width: 75%;
+    }
+    ol li{
+        font-size: 26px;
+    }
+    li p{
+        font-size: 14px;
+    }
+    /* Mobile : infomation */
+    .infoSection{
+        height: auto;
+    }
+    .infoHeader{
+        text-align: center;
+        margin: 40px 0;
+    }
+    .infoCards{
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+        justify-content: center;
+        align-items: center;
+        text-align: center
+    }
+    .infoCards .card{
+        margin-bottom: 60px;
+    }
+    /* Mobile : banner */
+    .banner{
+        height: auto;
+        flex-direction: column-reverse;
+        padding: 50px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .banner h1{
+        font-size: 6vw;
+    }
+    .bannerInnerText{
+        font-size: 3vw !important;
+    }
+    .bannerText img{
+        width: 20vw;
+    }
+    .bannerImg img{
+        width: 26vw;
+    }
+    .footer{
+        padding-bottom: 40px;
+    }    
+}

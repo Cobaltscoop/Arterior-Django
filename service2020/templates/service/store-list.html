@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+
+{% block style %}
+<title>StoreTab</title>
+{% endblock style %}
+
+
+{% block content %}
+{% include 'header.html' %}
+
+
+<main class="i-main">
+  <section class="store-list" id="store-list" data-aos="fade-up" data-aos-duration="500">
+
+    <h1>참여가게 목록</h1>
+    <div class="list-main">
+      <input type="radio" name="tabs" id="tab1" class="list-tab" checked>
+      <label for="tab1" class="cool-link">전체</label>
+
+      <input type="radio" name="tabs" id="tab2" class="list-tab">
+      <label for="tab2" class="cool-link">음식점</label>
+
+      <input type="radio" name="tabs" id="tab3" class="list-tab">
+      <label for="tab3" class="cool-link">식음료</label>
+
+      <input type="radio" name="tabs" id="tab4" class="list-tab">
+      <label for="tab4" class="cool-link">서비스</label>
+
+      <input type="radio" name="tabs" id="tab5" class="list-tab">
+      <label for="tab5" class="cool-link">생활잡화</label>  
+      <!-- https://stackoverflow.com/questions/25800067/how-to-divide-list-in-a-single-ul-into-3-columns/25800221 -->
+
+
+      <!-- 목록 1 : 전체 목록 -->
+      <section id="content1" data-aos="fade-up" data-aos-duration="500">
+        <div class="store-list-items">
+          {% for store in total %}
+          <div class="store-list-item">
+            <a href="{{ store.get_absolute_url }}">
+              <img src="{{ store.imageBanner1.url }}" alt="">
+            </a>
+            <p><span class="name"><a href="{{ store.get_absolute_url }}">{{ store.title }}</a></span> &nbsp;&nbsp; <small>{{ store.types }}</small> </p>
+            <p>{{ store.addressraw }}</a></p>
+          </div>
+          {% endfor %} 
+        </div>
+      </section>
+
+
+      <!-- 목록 2 : 음식점 목록 (food) -->
+      <section id="content2" data-aos="fade-up" data-aos-duration="500">
+        <div class="store-list-items">
+          {% for store in food %}
+          <div class="store-list-item">
+            <a href="{{ store.get_absolute_url }}">
+              <img src="{{ store.imageBanner1.url }}" alt="">
+            </a>
+            <p><span class="name"><a href="{{ store.get_absolute_url }}">{{ store.title }}</a></span> &nbsp;&nbsp; <small>{{ store.types }}</small> </p>
+            <p>{{ store.addressraw }}</a></p>
+          </div>
+          {% endfor %} 
+        </div>
+      </section>
+
+
+      <!-- 목록 3 : 식음료 목록 (restfood) -->
+      <section id="content3" data-aos="fade-up" data-aos-duration="500">
+        <div class="store-list-items">
+          {% for store in restfood %}
+          <div class="store-list-item">
+            <a href="{{ store.get_absolute_url }}">
+              <img src="{{ store.imageBanner1.url }}" alt="">
+            </a>
+            <p><span class="name"><a href="{{ store.get_absolute_url }}">{{ store.title }}</a></span> &nbsp;&nbsp; <small>{{ store.types }}</small> </p>
+            <p>{{ store.addressraw }}</a></p>
+          </div>
+          {% endfor %} 
+        </div>
+      </section>
+
+
+      <!-- 목록 4 : 서비스 목록 (house) -->
+      <section id="content4" data-aos="fade-up" data-aos-duration="500">
+        <div class="store-list-items">
+          {% for store in house %}
+          <div class="store-list-item">
+            <a href="{{ store.get_absolute_url }}">
+              <img src="{{ store.imageBanner1.url }}" alt="">
+            </a>
+            <p><span class="name"><a href="{{ store.get_absolute_url }}">{{ store.title }}</a></span> &nbsp;&nbsp; <small>{{ store.types }}</small> </p>
+            <p>{{ store.addressraw }}</a></p>
+          </div>
+          {% endfor %} 
+        </div>
+      </section>
+
+
+      <!-- 목록 5 : 생활잡화 목록 (service) -->
+      <section id="content5" data-aos="fade-up" data-aos-duration="500">
+        <div class="store-list-items">
+          {% for store in service %}
+          <div class="store-list-item">
+            <a href="{{ store.get_absolute_url }}">
+              <img src="{{ store.imageBanner1.url }}" alt="">
+            </a>
+            <p><span class="name"><a href="{{ store.get_absolute_url }}">{{ store.title }}</a></span> &nbsp;&nbsp; <small>{{ store.types }}</small> </p>
+            <p>{{ store.addressraw }}</a></p>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+    </div>
+  </section>
+</main>
+{% include 'footer.html' %}
+{% endblock content %}
+
+
+{% block js %}
+<script src="/static/y2020/storelist.js" charset="utf-8"></script>
+{% endblock js %}  
+
+
+{% comment style %}
+<link rel="stylesheet" href="/static/src/page/storelist.css">  
+<script src="http://localhost:3000/storelist.js" charset="utf-8"></script>
+{% endcomment %}
+

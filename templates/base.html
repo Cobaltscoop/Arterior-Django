@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href='/media/favicon.ico'>
+  <link rel="stylesheet" type="text/css" href="/static/normalize.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-30PG45RNS7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-30PG45RNS7');
+  </script>
+  
+  {% block style %}
+  {% endblock style %}    
+</head>
+<body>
+
+  {% block content %}
+  {% endblock content %}        
+
+  
+
+<script src="/static/jquery-3.6.0.min.js"></script>
+{% block js %}
+{% endblock js %}
+<script src="/static/y2020/header.js" charset="utf-8"></script>
+<script>
+AOS.init();
+</script>
+</body>
+</html>
+
+
+{% comment %}
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+<div id="loader" class="loader">
+  <img src="/media/image/loading3.gif" alt="">
+</div>
+{% endcomment %}

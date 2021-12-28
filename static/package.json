@@ -1,0 +1,25 @@
+{
+  "name": "djwebapck",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "momukjilab",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve --config webpack.dev.js --env development",
+    "build": "webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-syntax-decorators": "^7.12.1",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.1",
+    "source-map": "^0.7.3",
+    "style-loader": "^2.0.0"
+  }
+}

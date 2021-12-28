@@ -1,0 +1,48 @@
+/*=== GOOGLE FONTS & Home Style===*/
+@charset "utf-8";
+@import 'data.css';
+@import 'base.css';
+
+#header nav { 
+  display: none;
+  visibility: hidden;
+}
+
+.fade-in {
+  animation: fadeIn ease 3s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+  
+
+.loader {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 50px;
+  height: 100px;
+  background: red;
+  z-index: 9999;
+}
+
+
+#loader img {
+  position: fixed;
+  z-index:9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: red;
+}
+
+#loader img {
+  width: 100px;
+}
+
+#context {
+  display: none;
+}

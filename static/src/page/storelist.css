@@ -1,0 +1,149 @@
+/* 1 Tab Menu CSS Style Functions.. */
+.store-list {
+  margin: var(--header-height) var(--mb-3);
+  padding-top: var(--header-height);
+}
+
+.list-main label {
+  /* 위 오른쪽, 아래, 왼쪽 (위에서 시계방향) */
+  padding: var(--mb-2) var(--mb-3) var(--mb-3) 0px;
+  transition: .3s;
+}
+
+.list-main section {
+  display: none;
+}
+
+.list-main input {
+  display: none;
+}
+
+.list-main label {
+  display: inline-block;
+  text-align: center;
+}
+
+.list-main label:hover {
+  cursor: pointer;
+}
+
+.list-main input:checked + label {
+  color: #555;
+}
+
+.list-main input:checked section {
+  display: inline-block;
+}
+
+.list-main section ul li a {
+  text-decoration: none;
+  color:black;
+}
+
+/* 2 Selecting the Under Bar Effect */
+.list-main input:checked > label {
+  border-left: 5px solid #222222;
+}
+
+.cool-link {
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+}
+
+.cool-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 4px;
+  background: #000;
+  transition: width .3s;
+}
+
+.cool-link:hover::after {
+  width: 100%;
+  transition: width .3s;
+}
+
+/* 3 Tab Selecting Function */
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5 {
+  display: block;
+}
+
+
+/* 4 다단 Layout Style */
+/* ================================ */
+.store-list-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+}
+
+.store-list-item {
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  padding-bottom: var(--mb-4);
+}
+
+.store-list-item .name {  
+  text-decoration: none;
+  font-weight: var(--font-semi-bold);
+  color: black;
+  align-self: start;
+}
+
+.store-list-item img {
+  width: 80%;
+  border-radius: 5px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.store-list-item a {
+  text-decoration: none;
+  color: black;
+} 
+
+@media screen and (max-width: 960px) {
+  .store-list-items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .store-list {
+    margin: 0px var(--mb-3);
+    padding: 20px 3px;
+  }
+  .store-list-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .store-list-items img {
+    height: 120px;
+    width: 75%;
+    border-radius: 5px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+}
+
+/* === 모바일 Media Query  === */
+/* max-width: 380px */
+@media screen and (max-width: 560px) {
+  .list-main label {
+    /* 위, 오른쪽, 아래, 왼쪽 (위에서 시계방향) */
+    padding: var(--mb-2) var(--mb-1) var(--mb-3) 0px;
+    transition: .3s;
+  }
+  .store-list-items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .store-list-item a {
+    font-size: large;
+  }
+}

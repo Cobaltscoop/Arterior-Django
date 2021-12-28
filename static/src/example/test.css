@@ -1,0 +1,46 @@
+.artist__container{
+	grid-template-columns: repeat(4, minmax(20px, 250px));
+}
+
+
+/* === DeskTop Artist Screen Layout === */
+@media screen and (max-width: 1200px) {
+	.artist__container{
+		grid-template-columns: repeat(3, minmax(20px, 250px));
+	}
+}
+
+
+@media screen and (max-width: 960px) {
+	.artist__container{
+		grid-template-columns: repeat(2, minmax(20px, 250px));
+	}
+}
+
+
+/* Tablet and Big Mobile Screen */
+@media screen and (max-width: 768px) {
+	main, .footer {
+		margin: 0px;
+	}
+	.footer__content {
+		justify-content: center;
+	}
+}
+
+
+/* === 모바일 Media Query  === */
+@media screen and (max-width: 480px) {
+	.artist__container{
+		grid-template-columns: repeat(1, minmax(20px, 250px));
+	}	
+}
+
+
+/* === SECTION for DeskTop PC === */
+@media screen and (min-width: 768px) {
+	.gallery__container, 
+	.app__container {
+    height: 100%;
+  }
+}

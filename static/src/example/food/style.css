@@ -1,0 +1,446 @@
+/*=== GOOGLE FONTS & Home Style===*/
+@charset "utf-8";
+@import 'data.css';
+@import 'base.css';
+
+div, p, h1, h2, img, header, nav, main, section, footer {
+	border: 1px dashed rgba(0,0,0,.4) !important;
+}
+
+/* Variable Dark Theme Color Change */
+body.dark-theme {
+  --title-color: #f1f3f2;
+  --text-color: #c7d1cc;
+  --body-color: #1d2521;
+  --container-color: #27302c;
+}
+.change-theme {
+  position: initial;
+  margin-left: var(--mb-2);
+}
+
+main, .footer {
+	/* max-width: 1200px; */
+	margin: 0px var(--mb-6) 0px;
+}
+
+.section {
+  padding: 4rem 0 2rem;
+}
+.section-title,
+.section-subtitle {
+  text-align: center;
+}
+.section-title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+  margin-bottom: var(--mb-3);
+}
+.section-subtitle {
+  /* position property */
+  display: block;
+  /* position & style values */
+  font-weight: var(--font-medium);
+  color: var(--first-color);
+	margin-bottom: var(--mb-1);
+	margin-top: var(--mb-3);
+}
+
+/* BASE Layout */
+.bd-container {
+  /* 화면 최대넓이 설정 크기 */
+  /* max-width: 960px; */
+  width: calc(100% - 2rem);
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
+.bd-grid {
+	display: grid; 
+	gap: 1rem;
+}
+.bd-flex {
+  display: flex;
+  flex-direction: column;
+}
+/* Button Layout */
+.button {
+	display: inline-block;
+	background-color: var(--first-color);
+	color: #fff;
+	padding: .5rem 1rem;
+	border-radius: 1.5rem;
+	transition: .3s;
+}
+.button:hover {
+	background-color: var(--first-color-alt);
+}
+
+/* 1 SCROLL TOP */
+.scrolltop {
+	right: 1rem;
+	bottom: 1rem;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 .4rem 0;
+	background: rgba(0,0,0, .3);
+	border-radius: .4rem;
+	z-index: var(--z-tooltip);
+	transition: .4s;
+	visibility: hidden;
+}
+.scrolltop:hover {
+	background-color: rgba(255,255,255,0.5);
+}
+.scrolltop h1 i {
+	color: rgba(255,255,255,1)
+}
+.scrolltop h1 i:hover {
+	color: var(--first-color-alt)
+}
+.scroll-top {
+	visibility: visible;
+	bottom: 1.0rem;
+}
+
+/* 2 NAVIGATION BAR */
+/* (1) Base Style */
+.l-header{
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: var(--z-fixed);
+	background-color: var(--body-color);
+	position: fixed;
+}
+.nav {
+  height: var(--header-height);
+  /* max-width: 1024px; */
+	display: flex;
+	flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__item{
+	margin-bottom: var(--mb-2);
+}
+.nav__link, .nav__logo, .nav__toggle{
+	color: var(--text-color);
+	font-weight: var(--font-medium);
+}
+.nav__logo:hover, .nav__link:hover {
+	color: var(--first-color);
+}
+.nav__link {
+	transition: 0.3s;
+}
+.nav__toggle {
+	font-size: 1.3rem;
+}
+/* (2) Function Used Style */
+.active-link {   /* a Tag 의 active 스타일 */
+  color: var(--first-color);
+}
+.scroll-header { /* <header> 그림자 (입체효과) */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 3 SECTION CONTENT */
+/* (1) About */
+.about__container {
+	min-height: calc(100vh - var(--header-height));
+	/* align-content: center; */
+}
+.about__description {
+  margin-bottom: var(--mb-2);
+}
+.about__subtitle {
+	font-size: var(--h1-font-size);
+	color: var(--title-color)
+}
+.about__img { 
+	width: 40vw;
+	justify-self: center;
+	overflow-y: hidden;
+}
+
+/* (2) Gallery */
+.gallery__data {
+	text-align: center;
+}
+.gallery__description {
+	display: block;
+	margin-bottom: var(--mb-3);
+}
+.gallery__img {
+	order: -1;
+	width: 280px;
+	border-radius: .5rem;
+	justify-self: center;
+}
+
+/* (3) Naver Map */
+.map {
+  display: flex;
+  flex-direction: column;
+	align-self: center;
+}
+.map__item{
+  display: block;
+  text-align: center;
+}
+.naver-map {
+	min-width: 350px;
+  min-height: 500px;
+	border-radius: 30px;
+	margin: var(--mb-1) var(--mb-5);
+}
+.naver-marker {
+  width: 150px;
+  text-align: center;
+  padding: 5px;
+  font-size: 15px;
+}
+
+/* (4) Artist Profile Card 
+https://youtu.be/_BFn4yUxBpM */
+.artist__title {
+	margin-top: var(--mb-6);
+}
+.artist__container{
+	gap: 3rem;
+	grid-template-columns: repeat(4, minmax(120px, 250px));
+	/* place-content: center; */
+	align-content: center;
+	justify-content: center;
+	padding: var(--mb-3);
+}
+.artist-item {
+	/* Profile 배경 */
+	width: 100%;
+	height: 350px;
+	display: flex;
+	position: relative;
+	align-items: flex-end;
+	background: #fff;
+	border-radius: var(--mb-3);
+	transition: 0.6s ease-out;
+	box-shadow: 0 10px 10px rgba(0,0,0,.5);
+	/* padding: var(--mb-2); */
+}
+.artist-item:hover {
+	/* transform: translateY(15px); */
+}
+.artist-item:hover::before {
+	opacity: 1;
+}
+.artist-item:hover .artist-text {
+	opacity: 1;
+	transition: translateY(0);
+}
+.artist-item::before{
+	/* Profile 위 그림자 */
+	content: '';
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: var(--mb-3);
+	background: linear-gradient(to top, #000, transparent);
+	z-index: 20;
+	transition: 0.5s;
+	opacity: 0;
+}
+.artist-item img {
+	/* Profile 위 그림자 */
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+	border-radius: var(--mb-3);
+}
+.artist-item .artist-text {
+  position: relative;
+	opacity: 0;
+	z-index: 30;
+	color: #ffffff;
+	/* transform: translateY(20px); */
+	transition: 0.5s;
+}
+.artist-text{
+  width: 100%;
+	padding: 0 var(--mb-2) var(--mb-3);
+}
+/* Artist Name */
+.artist-text h2{
+	letter-spacing: 3px;
+}
+/* Artist 설명 1줄 */
+.artist-text .title {
+  font-weight: var(--font-semi-bold);
+	font-size: 17px;
+	letter-spacing: 1px;
+}
+/* Artist 가게설명 */
+.artist-text  a {
+	font-size: var(--small-font-size);
+	text-decoration: none;
+	color: #fff;
+	width: auto;
+}
+/* Artist Social Icon 설명 */
+.artist-text  .artist-social a {
+	padding: 0 5px;
+  /* justify-content: space-between; */
+}
+/* Artist A link HOVER 효과 */
+.artist-text p a:hover {
+  color: white;
+  text-shadow: 1px 1px 2px rgba(255,255,255, 1);
+}
+
+/* (5) App Card */
+.app__container {
+  /* row-gap: 2.5rem; */
+  /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
+}
+.app__data {
+  text-align: center;
+}
+.app__description {
+  margin-bottom: var(--mb-5);
+}
+.app__logos {
+	margin-bottom: var(--mb-4);
+	place-content: center;
+}
+.app__logo {
+	width: 250px;
+	height: 90px;
+  margin: 0 var(--mb-1);
+}
+.app__img {
+  width: 350px;
+  justify-self: center;
+}
+
+
+/* 4 FOOTER CONTENT */
+.footer__container {
+	/* grid-template-columns:2fr 1fr; */
+	row-gap: 2rem;
+	padding-left: var(--mb-4);
+}
+/* (1) left footer */
+.footer__logo {
+	font-size: var(--h3-font-size);
+	font-weight: var(--font-semi-bold);
+	color: var(--first-color);
+}
+.footer__description {
+	display: block;
+	font-size: var(--small-font-size);
+	margin: .25rem 0 var(--mb-3);
+}
+.footer__social {
+	font-size: 1rem;
+	color: var(--title-color);
+	margin-right: var(--mb-1);
+}
+/* (2) right footer */
+.footer__title{
+	font-size: var(--h2-font-size);
+	color: var(--title-color);
+	margin-bottom: var(--mb-2);
+}
+.footer__link {
+	display: inline-block;
+	margin-bottom: var(--mb-1);
+	color: var(--text-color);
+}
+.footer__link:hover {
+	color:var(--first-color);
+}
+/* (3) footer bottom */
+.footer__copyright {
+	text-align: center;
+	font-size: var(--small-font-size);
+	color: var(--text-color-light);
+	margin-top: 2.5rem;
+}
+
+
+/* === 모바일 Media Query  === */
+@media screen and (max-width: 768px) {
+	.nav__menu{
+		/* top: var(--header-height); */
+		top: -100%;
+		left: 0;
+		width: 100%;
+		padding: 1.5rem 0 1rem; /* top <left-right> bottom */
+		position: fixed;
+		display: block;
+		text-align: center; /* content 내부의 Text 좌우 정렬*/
+		background-color: var(--body-color);
+
+		transition: 0.4s;
+		box-shadow: 0 4px 4px rgba(0,0,0,.4);
+		border-radius: 0 0 1rem 1rem;
+		z-index: var(--z-fixed - 100);
+	}	
+	.show-menu{
+		top: var(--header-height);
+	}
+}
+
+
+/* === SECTION over the Mobile === */
+@media screen and (min-width: 768px) {
+	.about__container,
+	.gallery__container, 
+	.app__container {
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+	}
+	.app__data, .app__initial, .app__data {
+		text-align: initial;  /* 왼쪽 정렬 */
+	}
+	.app__img {
+		width: 380px;
+		order: -1
+	}
+	.footer__container {
+		grid-template-columns:2fr 1fr;
+		row-gap: 2rem;
+		padding-left: var(--mb-4);
+	}
+}
+
+/* == for Tablet Query 확장화면 구성 == */
+@media screen and (min-width: 768px) {
+	body {
+		margin: 0;
+	}
+	.section {
+		padding-top: 1rem;
+	}
+	.nav {
+		height: calc(var(--header-height) + 1.5rem);
+	}
+	.nav__list {
+		display: flex;
+	}
+	.nav__item {
+		margin-right: var(--mb-4);
+		margin-bottom: 0;
+	}
+	.nav__toggle {
+		display: none;
+	}
+}

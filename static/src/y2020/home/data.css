@@ -1,0 +1,58 @@
+/* CSS Style 에서 반복 사용할 객체 */
+:root {
+	--header-height: 3rem;
+	--header-height-add: 5rem;
+	--naver-map-height: 5rem;
+
+	/* ========== Colors ========== */
+	--first-color: #535353;
+	--first-color-alt: #787575;
+	--title-color: #393939;
+	--text-color: #707070;
+	--text-color-light: #a6a6a6;
+	--body-color: #fbfefd;
+	--container-color: #ffffff;
+	--footer-color: #C4C4C4;
+	--footer-text : #000000;
+	--button-color: #C4C4C4;
+
+	/*========== Font and typography ==========*/
+	--body-font: 'Noto Sans KR', sans-serif;
+	--h1-font-size: 1.5rem;
+	--h2-font-size: 1.25rem;
+	--h3-font-size: 1rem;
+	--biggest-font-size: .75rem;
+	--normal-font-size: 0.938rem;
+	--small-font-size: 0.813rem;
+	--smaller-font-size: 0.75rem;
+
+	/*========== Font weight ==========*/
+	--font-medium: 400;
+	--font-semi-bold: 700;
+
+	/*========== Margenes ==========*/
+	--mb-1: 0.5rem;
+	--mb-2: 1rem;
+	--mb-3: 1.5rem;
+	--mb-4: 2rem;
+	--mb-5: 2.5rem;
+	--mb-6: 3rem;
+	--mb-9: 5rem;
+
+	/*========== z index ==========*/
+	--z-tooltip: 10;
+	--z-fixed: 100;
+}
+
+/* === 데스크탑 화면 (최소 길이 : 이것 보다는 커야) === */
+@media screen and (min-width: 768px) {
+	:root {
+		--biggest-font-size: 4rem;
+		--h1-font-size: 2.25rem;
+		--h2-font-size: 1.5rem;
+		--h3-font-size: 1.25rem;
+		--normal-font-size: 1rem;
+		--small-font-size: 0.875rem;
+		--smaller-font-size: 0.813rem;
+	}
+}

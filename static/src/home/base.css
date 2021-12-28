@@ -1,0 +1,65 @@
+/* Base Style 객체
+Style Value : 방향
+https://ofcourse.kr/css-course/margin-padding-%EC%86%8D%EC%84%B1
+
+=> 위, 오른쪽, 아래, 왼쪽 순서 (위부터 시계방향 회전)
+
+margin: 20px :: 상하좌우 모두 20px
+margin: 30px 10px :: 상하 30px, 좌우 10px
+margin: 30px 10px 40px :: 위 30px, 좌우 10px, 아래 40px
+margin: 30px 10px 20px 50px :: 위 30px, 오른쪽 10px, 아래 20px, 왼쪽 50px */
+
+*,
+::before,
+::after {
+  /* border-box : 계산시 테두리와 안쪽 여백의 크기도 함께 고려 */
+  box-sizing: border-box;
+}
+
+html {
+  /* Scroll 방식을 부드럽게 적용 */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  margin: var(--header-height) 0 0 0;
+  color: var(--text-color);
+  background-color: var(--body-color);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100vw;
+  height: auto;
+}
+
+/* Variable Dark Theme Color Change */
+body.dark-theme {
+  --title-color: #f1f3f2;
+  --text-color: #c7d1cc;
+  --body-color: #535353;
+  --container-color: #27302c;
+}
+.change-theme {
+  position: initial;
+  margin-left: var(--mb-2);
+}

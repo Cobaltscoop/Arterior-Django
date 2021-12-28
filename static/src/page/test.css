@@ -1,0 +1,132 @@
+@import '../home/data.css';
+
+/* Number Count Animation */
+.counter {
+  display: flex;
+  background: linear-gradient(45deg, #E91E63, #600080);
+  min-height: 5 0vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.num {
+  font-size: 6em;
+  border: 8px solid gray;
+  color: black;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  place-content: center;
+}
+
+
+/* == Counter Style == */
+.wrapper {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper span {
+  color: red;
+  border: 5px solid #ddd;
+  padding: 0 30px;
+  border-radius: 25px;
+  margin: 0 10px;
+}
+
+.box {
+  display: inline-block;
+  overflow: hidden;
+  height: 1em;
+  line-height: 1em;
+  font-weight: bold;
+  font-size: 16em;
+}
+
+.box::after {
+  position: relative;
+  white-space: pre;
+  content: "0\A 1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9 ";
+}
+
+.box.first-number::after {
+  animation: animate 1s steps(10) infinite;
+}
+.box.second-number::after {
+  animation: animate 10s steps(10) infinite;
+}
+.box.third-number::after {
+  animation: animate 100s steps(10) infinite;
+}
+
+
+@keyframes animate {
+  0% {
+    top:0; 
+  }
+  100% {
+    top: -10em;
+  }
+}
+
+
+/* == Navigation Style == */
+body {
+  font-family: var(--body-font);
+}
+
+nav {
+  position: fixed;
+  top:0;
+  width: 100%;
+  height: 80px;
+  background: #607d8b;
+  padding: 0 100px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+}
+
+#navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#navbar ul li a {
+  color:#fff;
+  padding: 0px 20px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#navbar .nav__title {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+section {
+  padding: 150px 100px 100px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+section h1 {
+  margin:0;
+  padding: 0;
+  font-size: 3em;
+}
+
+section h2 {
+  font-size: 2.8em;
+  color: #0bacff;
+}

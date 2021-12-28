@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+
+{% comment %}
+<!-- SITE MAP
+<a> #scroll-top
+<header> #header
+<main>
+  #home <section>
+  #services <section>
+  #menu <section>
+  #app <section>
+  #contact <section>
+#footer -->
+{% endcomment %}
+
+
+{% block style %}
+<title>관악아트테리어</title>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wstocuk035"></script>
+<style>
+.cobalt__people__name a {
+	text-decoration: none;
+	color:rgb(112, 112, 112);
+}
+</style>
+{% endblock style %}
+
+
+{% block content %}
+{% include 'header-tab.html' %}
+
+<!-- SECTION CONTENT -->
+<main class="l-main">
+
+  <!-- Section 1 : About Arterior -->
+  <section class="about" id="about" data-aos="fade-up" data-aos-duration="1000">
+    <div class="about__container bd-grid" style="background-image: url('/media/image/bg.jpg')">
+      <div class="about__data">
+        <span class="section-title">2020 관악 아트테리어</span>
+        <h2 class="about__subtitle"><strong>ARTERIOR</strong> = [ Art + Interior ]</h2>
+        <p class="about__description">아트테리어는 [Art]와 [Interior]를 합친 단어 입니다.서울 도심 화려한 간판, 고층 건물들 사이에 숨겨진 정겨운 우리 이웃들의 모습들이 온라인 마켓이 커지고 배달 문화가 활성화 되면서, 지역의 작은 가게들은 경쟁력을 잃고 있는게 현실이죠. 이번에 진행된 관악 아트테리어 사업의 '아트테리어'는 아트와 인테리어의 합성어로 예술가와 소상공인 상생프로젝트 입니다</p>
+        <div class="about__button">
+          <a href="{% url 'service2020:gallery' %}" class="button">상세내용 보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section 2 : Naver Map for Store -->
+  <section class="map" id="map" data-aos="fade-up" data-aos-duration="1000">
+    <span class="section-subtitle">참여가게 지도</span>
+    <h2 class="section-title">프로그램에 참여한 소상공인 점포지도 입니다</h2>
+    <div class="map__item">
+      <a href="{% url 'service2020:list' %}" class="button section-subtitle">참여가게 목록</a>    
+    </div>
+    <div class="bd-flex">
+      <div class="naver-map" id="naver-map"></div>
+    </div>
+  </section>
+
+
+  <!-- Section 3 : Artist Profile Card -->
+  <section class="artist" id="artist" data-aos="fade-up" data-aos-duration="1000">
+    <span class="section-subtitle artist__title">참여 예술가</span>
+    <h2 class="section-title">아트테리어에 참여한 예술가를 소개 합니다</h2>
+    <div class="artist__container bd-grid">
+
+      {% for artist in artists %}
+      <div class="artist-item">
+        <img src="{{ artist.photo.url }}" alt="">
+        <div class="artist-text">
+
+          <p class="artist-social">
+            {% if artist.email %}
+              <a href="mailto:{{artist.email}}"><i class="far fa-envelope"></i></a>
+            {% endif %}
+            {% if artist.instagram %}
+              <a href="{{ artist.instagram }}"><i class="fab fa-instagram"></i></a>
+            {% endif %}
+            {% if artist.facebook %}
+              <a href="{{ artist.facebook }}"><i class="fab fa-facebook-f"></i></a>              
+            {% endif %}
+            {% if artist.blog %}
+              <a href="{{ artist.blog }}"><i class="fas fa-book"></i></a>
+            {% endif %}
+          </p>
+
+          <h2>{{ artist.name }}</h2>
+
+          <p class="title">{{ artist.title }}</p>
+          
+          {% for store in artist.stores.all %}
+            <p><a href="{{ store.get_absolute_url }}">- {{ store.title }}</a></p>
+          {% endfor %}
+
+        </div>
+      </div>        
+      {% endfor %}
+
+    </div>
+  </section>
+
+  <!-- Section 4 : Introduce Our Cobalt -->
+  <section class="cobalt bd-container" id="app" data-aos="fade-up" data-aos-duration="1000">
+    <div class="cobalt__container bd-grid">
+      <div class="cobalt__data">
+        <span class="section-subtitle cobalt__initial">운영진 소개</span>
+        <h2 class="section-title cobalt__initial">아트테리어 운영진을 소개 합니다</h2>
+      </div>
+
+      <div class="cobalt__peoples">
+        
+        {% for manager in managers %}
+          <div class="cobalt__people">
+            <img src="{{ manager.photo.url }}" alt="">
+            {% if manager.email %}
+              <h3 class="cobalt__people__name"><a href="{{ manager.email }}">{{ manager.name }}</a></h3>
+            {% else %}             
+              <h3 class="cobalt__people__name">{{ manager.name }}</h3>
+            {% endif %}
+            <p class="cobalt__people__profile">{{ manager.title }}</p>
+            <p class="cobalt__people__description">{{ manager.description }}</p>
+          </div>          
+        {% endfor %}
+
+      </div>
+    </div>
+  </section>
+</main>
+
+{% include 'footer.html' %}
+{% endblock content %}
+
+
+{% block js %}
+<script>
+var CENTER = {{center | safe}};
+var POSITIONS = {{store | safe}};
+var markerImg = "/media/image/pin_default.png";
+</script>
+<script src="/static/y2020/home.js" charset="utf-8"></script>
+{% endblock js %}
+
+
+{% comment style %}
+<link rel="stylesheet" type="text/css" href="/static/src/home/style.css">
+<script src="http://localhost:3000/home.js" charset="utf-8"></script>
+{% endcomment %}

@@ -1,0 +1,1 @@
+import '../example/profile/profile.css';
