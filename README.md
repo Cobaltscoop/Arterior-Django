@@ -3,6 +3,9 @@
 ![Django badge](https://img.shields.io/badge/Django-3.1-blue.svg)
 ![Django badge](https://img.shields.io/badge/Python-3.8-blue.svg)
 
+<strike>관악 아트테리어 Django 버젼으로 현재 업데이트가 중지 되었습니다.
+(since 2020 may..)</strike>
+
 <br/>
 
 ## Arterior 사이트 모델의 재정의
