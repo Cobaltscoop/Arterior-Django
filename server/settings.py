@@ -11,8 +11,8 @@ from pathlib import Path
 import socket
 import json
 import os
-SERVER_DEV_NAME = ["momukji", "pop-os"]
-SERVER_GET_NAME = "pop-os"  # socket.gethostname()
+SERVER_DEV_NAME = []
+SERVER_GET_NAME = ""  # socket.gethostname()
 BASE_DIR = Path(__file__).resolve().parent.parent
 SERVER_TESTING_LOCAL_PSQL = True
 SERVER_TESTING_LOCAL_SQLITE = False
@@ -133,10 +133,9 @@ if SERVER_TESTING_LOCAL_PSQL:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'djangotest',
-            'USER': 'django',
-            'PASSWORD': 'python',
-            # 'HOST': '127.0.0.1',
+            'NAME': '',
+            'USER': '',
+            'PASSWORD': '',
             'HOST': '127.0.0.1',
             'PORT': '5432',
         }
@@ -158,12 +157,11 @@ elif SERVER_GET_NAME in SERVER_DEV_NAME:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'arterior',
-            'USER': 'cobalt',
-            'PASSWORD': 'cobaltcoop',
-            # 'HOST': '127.0.0.1',
-            'HOST': 'arterior.kr',
-            'PORT': '7879',
+            'NAME': '',
+            'USER': '',
+            'PASSWORD': '',
+            'HOST': '',
+            'PORT': '',
         }
     }
 
